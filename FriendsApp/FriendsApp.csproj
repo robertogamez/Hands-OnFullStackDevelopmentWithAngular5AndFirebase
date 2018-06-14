@@ -141,6 +141,8 @@
     <TypeScriptCompile Include="friends\src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="friends\src\app\app.component.ts" />
     <TypeScriptCompile Include="friends\src\app\app.module.ts" />
+    <TypeScriptCompile Include="friends\src\app\authentication\authentication.routing.module.ts" />
+    <TypeScriptCompile Include="friends\src\app\authentication\authentication.module.ts" />
     <TypeScriptCompile Include="friends\src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="friends\src\environments\environment.ts" />
     <TypeScriptCompile Include="friends\src\main.ts" />
