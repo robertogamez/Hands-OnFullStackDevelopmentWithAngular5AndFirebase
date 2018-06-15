@@ -145,6 +145,7 @@
     <TypeScriptCompile Include="friends\src\app\authentication\authentication.module.ts" />
     <TypeScriptCompile Include="friends\src\app\services\authentication.service.spec.ts" />
     <TypeScriptCompile Include="friends\src\app\services\authentication.service.ts" />
+    <TypeScriptCompile Include="friends\src\app\services\database-constants.ts" />
     <TypeScriptCompile Include="friends\src\app\services\user.service.spec.ts" />
     <TypeScriptCompile Include="friends\src\app\services\user.service.ts" />
     <TypeScriptCompile Include="friends\src\app\services\user.ts" />
