@@ -143,6 +143,11 @@
     <TypeScriptCompile Include="friends\src\app\app.module.ts" />
     <TypeScriptCompile Include="friends\src\app\authentication\authentication.routing.module.ts" />
     <TypeScriptCompile Include="friends\src\app\authentication\authentication.module.ts" />
+    <TypeScriptCompile Include="friends\src\app\services\authentication.service.spec.ts" />
+    <TypeScriptCompile Include="friends\src\app\services\authentication.service.ts" />
+    <TypeScriptCompile Include="friends\src\app\services\user.service.spec.ts" />
+    <TypeScriptCompile Include="friends\src\app\services\user.service.ts" />
+    <TypeScriptCompile Include="friends\src\app\services\user.ts" />
     <TypeScriptCompile Include="friends\src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="friends\src\environments\environment.ts" />
     <TypeScriptCompile Include="friends\src\main.ts" />
