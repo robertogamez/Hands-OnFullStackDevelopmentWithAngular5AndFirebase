@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { AuthenticationRoutingModule } from './authentication.routing.module';
 
+import { PasswordEqualValidator } from './signup/signup.component';
+
 /**
  * Services
  */
@@ -14,7 +16,9 @@ import { UserService } from '../services/user.service';
     CommonModule,
     AuthenticationRoutingModule
   ],
-  declarations: [],
+  declarations: [
+      PasswordEqualValidator
+  ],
   providers: [
       AuthenticationService,
       UserService
