@@ -96,6 +96,7 @@
     <Content Include="friends\protractor.conf.js" />
     <Content Include="friends\src\app\app.component.html" />
     <Content Include="friends\src\app\authentication\signup\signup.component.html" />
+    <Content Include="friends\src\app\shared\error-alert\error-alert.component.html" />
     <Content Include="friends\src\favicon.ico" />
     <Content Include="friends\src\index.html" />
     <Content Include="Global.asax" />
@@ -125,6 +126,7 @@
     <Content Include="friends\tsconfig.json" />
     <Content Include="friends\tslint.json" />
     <Content Include="friends\src\app\authentication\signup\signup.component.scss" />
+    <Content Include="friends\src\app\shared\error-alert\error-alert.component.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -153,6 +155,9 @@
     <TypeScriptCompile Include="friends\src\app\services\user.service.spec.ts" />
     <TypeScriptCompile Include="friends\src\app\services\user.service.ts" />
     <TypeScriptCompile Include="friends\src\app\services\user.ts" />
+    <TypeScriptCompile Include="friends\src\app\shared\error-alert\error-alert.component.spec.ts" />
+    <TypeScriptCompile Include="friends\src\app\shared\error-alert\error-alert.component.ts" />
+    <TypeScriptCompile Include="friends\src\app\utils\password-equal-validator.directive.ts" />
     <TypeScriptCompile Include="friends\src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="friends\src\environments\environment.ts" />
     <TypeScriptCompile Include="friends\src\main.ts" />
