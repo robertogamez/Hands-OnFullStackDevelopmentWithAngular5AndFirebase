@@ -1,7 +1,9 @@
 <div class="col-md-6 col-md-offset-3">
     <h2>Signup</h2>
+
     <app-error-alert *ngIf="showError" [errorMessage]="errorMessage"></app-error-alert>
-    <form name="form" (ngSubmit)="onSignup(signupFormData)"
+
+    <form name="form" (ngSubmit)="onSingUp(signupFormData)"
           #signupFormData="ngForm">
 
         <div class="form-group">
@@ -9,7 +11,7 @@
             <input type="text" class="form-control"
                    name="name" (ngModel)="name"
                    #name="ngModel" required id="name" />
-            <div [hidden]="!name.valid || name.pristine"
+            <div [hidden]="name.valid || name.pristine"
                  class="alert alert-danger">
                 Name is required
             </div>
@@ -22,7 +24,7 @@
                    #email="ngModel" required
                    pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
                    id="email" />
-            <div [hidden]="!email.valid || email.pristine"
+            <div [hidden]="email.valid || email.pristine"
                  class="alert alert-danger">
                 <div [hidden]="email.hasError('required')">
                     Email is required
@@ -34,25 +36,25 @@
         </div>
 
         <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control"
+                   name="password" (ngModel)="password"
+                   #password="ngModel" required id="password" />
+            <div [hidden]="password.valid || password.pristine"
+                 class="alert alert-danger">
+                Password is required
+            </div>
+        </div>
+
+        <div class="form-group">
             <label for="confirmPassword">Retype Password</label>
             <input type="password" class="form-control"
                    passwordEqual="password"
                    name="confirmPassword" (ngModel)="confirmPassword"
                    #confirmPassword="ngModel" required id="confirmPassword" />
-            <div [hidden]="!confirmPassword.valid || confirmPassword.pristine"
+            <div [hidden]="confirmPassword.valid || confirmPassword.pristine"
                  class="alert alert-danger">
                 Password did not match
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="password">Retype Password</label>
-            <input type="password" class="form-control"
-                   name="password" (ngModel)="password"
-                   #password="ngModel" required id="password" />
-            <div [hidden]="!password.valid || password.pristine"
-                 class="alert alert-danger">
-                Password is required
             </div>
         </div>
 
@@ -65,7 +67,7 @@
                    minlength="10"
                    maxlength="10"
                    id="mobile" />
-            <div [hidden]="!mobile.valid || mobile.pristine" class="alert alert-danger">
+            <div [hidden]="mobile.valid || mobile.pristine" class="alert alert-danger">
                 <div [hidden]="mobile.hasError('minlength')">Mobile should be 10 digit</div>
                 <div [hidden]="mobile.hasError('required')">Mobile is required</div>
                 <div [hidden]="mobile.hasError('pattern')">Mobile number should be only numbers</div>
@@ -77,7 +79,7 @@
                     [disabled]="!signupFormData.form.valid">
                 Signup
             </button>
-            <a [routerLink]="['/app-friends-login']" class="btn btn-link">
+            <a [routerLink]="['']" class="btn btn-link">
                 Cancel
             </a>
         </div>

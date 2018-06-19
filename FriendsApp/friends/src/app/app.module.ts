@@ -13,13 +13,10 @@ import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { SignupComponent } from './signup/signup.component';
-
 
 @NgModule({
     declarations: [
-        AppComponent,
-        SignupComponent
+        AppComponent
     ],
     imports: [
         CommonModule,
@@ -27,6 +24,7 @@ import { SignupComponent } from './signup/signup.component';
         FormsModule,
         AngularFireModule.initializeApp(environment.firebase),
         RouterModule.forRoot([]),
+        BrowserAnimationsModule,
         AuthenticationModule
     ],
     providers: [
