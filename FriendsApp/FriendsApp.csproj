@@ -95,6 +95,7 @@
     <Content Include="friends\karma.conf.js" />
     <Content Include="friends\protractor.conf.js" />
     <Content Include="friends\src\app\app.component.html" />
+    <Content Include="friends\src\app\authentication\login\login.component.html" />
     <Content Include="friends\src\app\authentication\signup\signup.component.html" />
     <Content Include="friends\src\app\shared\error-alert\error-alert.component.html" />
     <Content Include="friends\src\favicon.ico" />
@@ -127,6 +128,7 @@
     <Content Include="friends\tslint.json" />
     <Content Include="friends\src\app\authentication\signup\signup.component.scss" />
     <Content Include="friends\src\app\shared\error-alert\error-alert.component.scss" />
+    <Content Include="friends\src\app\authentication\login\login.component.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -147,6 +149,8 @@
     <TypeScriptCompile Include="friends\src\app\app.module.ts" />
     <TypeScriptCompile Include="friends\src\app\authentication\authentication.routing.module.ts" />
     <TypeScriptCompile Include="friends\src\app\authentication\authentication.module.ts" />
+    <TypeScriptCompile Include="friends\src\app\authentication\login\login.component.spec.ts" />
+    <TypeScriptCompile Include="friends\src\app\authentication\login\login.component.ts" />
     <TypeScriptCompile Include="friends\src\app\authentication\signup\signup.component.spec.ts" />
     <TypeScriptCompile Include="friends\src\app\authentication\signup\signup.component.ts" />
     <TypeScriptCompile Include="friends\src\app\services\authentication.service.spec.ts" />

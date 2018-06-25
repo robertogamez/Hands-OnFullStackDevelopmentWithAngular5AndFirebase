@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthenticationRoutingModule } from './authentication.routing.module';
 
 import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
 import { PasswordEqualValidator } from '../utils/password-equal-validator.directive';
 import { ErrorAlertComponent } from '../shared/error-alert/error-alert.component';
 
@@ -22,6 +23,7 @@ import { UserService } from '../services/user.service';
     ],
     declarations: [
         SignupComponent,
+        LoginComponent,
         PasswordEqualValidator,
         ErrorAlertComponent
     ],
