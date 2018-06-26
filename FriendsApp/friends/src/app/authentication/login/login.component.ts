@@ -52,6 +52,15 @@ export class LoginComponent implements OnInit {
         });
     }
 
+    onReset(resetFormData): void {
+        this.authService.resetPassword(resetFormData.value.email).then(() => {
+            alert('Reset instruction sent your email');
+        }).catch((error) => {
+            this.errorMesage = error.message;
+            this.showError = true;
+        });
+    }
+
     ngOnInit() {
     }
 

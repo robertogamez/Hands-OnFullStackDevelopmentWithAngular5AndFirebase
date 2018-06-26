@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from './services/authentication.service';
 
 @Component({
     selector: 'app-friends',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    title = 'app';
+
+    authenticacionService: AuthenticationService;
+
+    constructor(private authService: AuthenticationService) {
+        this.authenticacionService = authService;
+        console.log(this.authenticacionService);
+    }
 }

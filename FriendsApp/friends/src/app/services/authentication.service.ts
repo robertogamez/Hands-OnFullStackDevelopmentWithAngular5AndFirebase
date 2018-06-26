@@ -28,4 +28,13 @@ export class AuthenticationService {
         return this.angularFireAuth.auth.sendPasswordResetEmail(email);
     }
 
+    public isAuthenticated(): boolean {
+        const user = this.angularFireAuth.auth.currentUser;
+        return user ? true : false;
+    }
+
+    public signout(): Promise<any> {
+        return this.angularFireAuth.auth.signOut();
+    }
+
 }

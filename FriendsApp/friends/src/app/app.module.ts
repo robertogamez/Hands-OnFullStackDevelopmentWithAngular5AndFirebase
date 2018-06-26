@@ -13,10 +13,16 @@ import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AboutComponent } from './about/about.component';
+
+import { AppRouting } from './app.routing';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        PageNotFoundComponent,
+        AboutComponent
     ],
     imports: [
         CommonModule,
@@ -25,7 +31,8 @@ import { RouterModule } from '@angular/router';
         AngularFireModule.initializeApp(environment.firebase),
         RouterModule.forRoot([]),
         BrowserAnimationsModule,
-        AuthenticationModule
+        AuthenticationModule,
+        AppRouting
     ],
     providers: [
         AngularFireAuth,
