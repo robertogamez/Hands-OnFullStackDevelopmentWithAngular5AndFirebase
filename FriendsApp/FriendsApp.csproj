@@ -100,6 +100,7 @@
     <Content Include="friends\src\app\authentication\signup\signup.component.html" />
     <Content Include="friends\src\app\page-not-found\page-not-found.component.html" />
     <Content Include="friends\src\app\shared\error-alert\error-alert.component.html" />
+    <Content Include="friends\src\app\user\user-profile\user-profile.component.html" />
     <Content Include="friends\src\favicon.ico" />
     <Content Include="friends\src\index.html" />
     <Content Include="Global.asax" />
@@ -133,6 +134,7 @@
     <Content Include="friends\src\app\authentication\login\login.component.scss" />
     <Content Include="friends\src\app\page-not-found\page-not-found.component.scss" />
     <Content Include="friends\src\app\about\about.component.scss" />
+    <Content Include="friends\src\app\user\user-profile\user-profile.component.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -162,6 +164,8 @@
     <TypeScriptCompile Include="friends\src\app\authentication\signup\signup.component.ts" />
     <TypeScriptCompile Include="friends\src\app\page-not-found\page-not-found.component.spec.ts" />
     <TypeScriptCompile Include="friends\src\app\page-not-found\page-not-found.component.ts" />
+    <TypeScriptCompile Include="friends\src\app\services\authentication.guard.spec.ts" />
+    <TypeScriptCompile Include="friends\src\app\services\authentication.guard.ts" />
     <TypeScriptCompile Include="friends\src\app\services\authentication.service.spec.ts" />
     <TypeScriptCompile Include="friends\src\app\services\authentication.service.ts" />
     <TypeScriptCompile Include="friends\src\app\services\database-constants.ts" />
@@ -170,6 +174,10 @@
     <TypeScriptCompile Include="friends\src\app\services\user.ts" />
     <TypeScriptCompile Include="friends\src\app\shared\error-alert\error-alert.component.spec.ts" />
     <TypeScriptCompile Include="friends\src\app\shared\error-alert\error-alert.component.ts" />
+    <TypeScriptCompile Include="friends\src\app\user\user-profile\user-profile.component.spec.ts" />
+    <TypeScriptCompile Include="friends\src\app\user\user-profile\user-profile.component.ts" />
+    <TypeScriptCompile Include="friends\src\app\user\user-routing.module.ts" />
+    <TypeScriptCompile Include="friends\src\app\user\user.module.ts" />
     <TypeScriptCompile Include="friends\src\app\utils\password-equal-validator.directive.ts" />
     <TypeScriptCompile Include="friends\src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="friends\src\environments\environment.ts" />

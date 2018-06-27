@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { UserModule } from './user/user.module';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -32,7 +33,8 @@ import { AppRouting } from './app.routing';
         RouterModule.forRoot([]),
         BrowserAnimationsModule,
         AuthenticationModule,
-        AppRouting
+        AppRouting,
+        UserModule
     ],
     providers: [
         AngularFireAuth,

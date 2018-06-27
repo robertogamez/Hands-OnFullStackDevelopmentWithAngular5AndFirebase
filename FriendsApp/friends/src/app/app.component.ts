@@ -12,6 +12,5 @@ export class AppComponent {
 
     constructor(private authService: AuthenticationService) {
         this.authenticacionService = authService;
-        console.log(this.authenticacionService);
     }
 }
