@@ -4,6 +4,7 @@ import 'firebase/storage';
 import { USERS_CHILD } from './database-constants';
 import { User } from './user';
 import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 
 /**
@@ -11,6 +12,8 @@ import { Observable } from 'rxjs/Observable';
  */
 @Injectable()
 export class UserService {
+
+    private subject: BehaviorSubject<User> = new BehaviorSubject(null);
 
     /**
      * Constructor
@@ -20,11 +23,40 @@ export class UserService {
 
     public addUser(user: User): void {
         this.fireDb.object(`${USERS_CHILD}/${user.uid}`).set(user);
+        this.saveUser(user);
     }
 
     public getUser(uid: string): Observable<User> {
-        const element = this.fireDb.object<User>(`${USERS_CHILD}/${uid}`).valueChanges();
-        return element;
+        return this.fireDb.object<User>(`${USERS_CHILD}/${uid}`).valueChanges();
+    }
+
+    public saveUser(user: User) {
+        this.subject.next(user);
+    }
+
+    public getSavedUser(): BehaviorSubject<User> {
+        return this.subject;
+    }
+
+    public updateEmail(user: User, newEmail: string): void {
+        this.fireDb.object(`${USERS_CHILD}/${user.uid}`).update({
+            email: newEmail
+        });
+        this.saveUser(user);
+    }
+
+    public updateMobile(user: User, mobile: string): void {
+        this.fireDb.object(`${USERS_CHILD}/${user.uid}`).update({
+            mobile: mobile
+        });
+        this.saveUser(user);
+    }
+
+    public updateName(user: User, name: string): void {
+        this.fireDb.object(`${USERS_CHILD}/${user.uid}`).update({
+            name: name
+        });
+        this.saveUser(user);
     }
 
 }
