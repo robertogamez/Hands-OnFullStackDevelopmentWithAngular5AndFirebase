@@ -98,9 +98,11 @@
     <Content Include="friends\src\app\app.component.html" />
     <Content Include="friends\src\app\authentication\login\login.component.html" />
     <Content Include="friends\src\app\authentication\signup\signup.component.html" />
+    <Content Include="friends\src\app\edit-dialog\edit-dialog.component.html" />
     <Content Include="friends\src\app\page-not-found\page-not-found.component.html" />
     <Content Include="friends\src\app\shared\error-alert\error-alert.component.html" />
     <Content Include="friends\src\app\user\user-profile\user-profile.component.html" />
+    <Content Include="friends\src\assets\images\person_edit.png" />
     <Content Include="friends\src\favicon.ico" />
     <Content Include="friends\src\index.html" />
     <Content Include="Global.asax" />
@@ -135,6 +137,7 @@
     <Content Include="friends\src\app\page-not-found\page-not-found.component.scss" />
     <Content Include="friends\src\app\about\about.component.scss" />
     <Content Include="friends\src\app\user\user-profile\user-profile.component.scss" />
+    <Content Include="friends\src\app\edit-dialog\edit-dialog.component.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -162,6 +165,8 @@
     <TypeScriptCompile Include="friends\src\app\authentication\login\login.component.ts" />
     <TypeScriptCompile Include="friends\src\app\authentication\signup\signup.component.spec.ts" />
     <TypeScriptCompile Include="friends\src\app\authentication\signup\signup.component.ts" />
+    <TypeScriptCompile Include="friends\src\app\edit-dialog\edit-dialog.component.spec.ts" />
+    <TypeScriptCompile Include="friends\src\app\edit-dialog\edit-dialog.component.ts" />
     <TypeScriptCompile Include="friends\src\app\page-not-found\page-not-found.component.spec.ts" />
     <TypeScriptCompile Include="friends\src\app\page-not-found\page-not-found.component.ts" />
     <TypeScriptCompile Include="friends\src\app\services\authentication.guard.spec.ts" />

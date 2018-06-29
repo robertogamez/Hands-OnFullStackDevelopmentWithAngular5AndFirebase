@@ -18,12 +18,14 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AboutComponent } from './about/about.component';
 
 import { AppRouting } from './app.routing';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         PageNotFoundComponent,
-        AboutComponent
+        AboutComponent,
+        EditDialogComponent
     ],
     imports: [
         CommonModule,

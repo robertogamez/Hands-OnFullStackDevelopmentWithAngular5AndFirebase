@@ -30,7 +30,6 @@ export class AuthenticationService {
 
     public isAuthenticated(): boolean {
         const user = this.angularFireAuth.auth.currentUser;
-        console.log('IsLogged: ', user);
         return user != null ? true : false;
     }
 

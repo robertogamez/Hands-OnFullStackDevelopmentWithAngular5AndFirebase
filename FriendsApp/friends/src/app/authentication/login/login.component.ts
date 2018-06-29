@@ -24,7 +24,8 @@ export class LoginComponent implements OnInit {
     ) {
         this.angularFireAuth.auth.onAuthStateChanged(user => {
             if (user) {
-                this.getUserInfo(user.uid);
+                const userVM = this.getUserFireBaseToUser(user);
+                this.getUserInfo(userVM);
             }
         });
     }
@@ -33,23 +34,36 @@ export class LoginComponent implements OnInit {
         this.authService.login(loginFormData.value.email, loginFormData.value.password)
             .then((user) => {
                 // Login user
-                const uid: string = user.uid;
-                this.getUserInfo(uid);
-                console.log('Get User info: ');
-                console.log(user);
+                const userVM = this.getUserFireBaseToUser(user);
+                this.getUserInfo(userVM);
             }).catch((error) => {
                 this.errorMesage = error.message;
                 this.showError = true;
             });
     }
 
-    private getUserInfo(uid: string) {
-        this.userService.getUser(uid).subscribe(userInfo => {
-            this.user = userInfo;
-        }, error => {
-            console.log('Error: ');
-            console.log(error);
-        });
+    private getUserFireBaseToUser(user: any) {
+        const userVM = new User(
+            user.email,
+            user.displayName,
+            user.phoneNumber,
+            user.uid,
+            0,
+            user.photoURL
+        );
+
+        return userVM;
+    }
+
+    private getUserInfo(user: User) {
+        this.user = user;
+        this.userService.saveUser(this.user);
+        console.log(this.user);
+        this.navigateToUserProfile();
+    }
+
+    private navigateToUserProfile() {
+        this.router.navigateByUrl('/app-friends-userprofile');
     }
 
     onReset(resetFormData): void {
