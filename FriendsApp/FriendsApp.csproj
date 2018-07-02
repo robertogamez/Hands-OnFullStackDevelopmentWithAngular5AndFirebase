@@ -165,6 +165,7 @@
     <TypeScriptCompile Include="friends\src\app\authentication\login\login.component.ts" />
     <TypeScriptCompile Include="friends\src\app\authentication\signup\signup.component.spec.ts" />
     <TypeScriptCompile Include="friends\src\app\authentication\signup\signup.component.ts" />
+    <TypeScriptCompile Include="friends\src\app\edit-dialog\edit-detail.ts" />
     <TypeScriptCompile Include="friends\src\app\edit-dialog\edit-dialog.component.spec.ts" />
     <TypeScriptCompile Include="friends\src\app\edit-dialog\edit-dialog.component.ts" />
     <TypeScriptCompile Include="friends\src\app\page-not-found\page-not-found.component.spec.ts" />
