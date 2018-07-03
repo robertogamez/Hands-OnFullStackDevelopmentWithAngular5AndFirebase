@@ -2,7 +2,7 @@
      id="editModal" role="dialog">
     <div class="modal-dialog">
         <form name="form" (ngSubmit)="onSubmit(editFormData)"
-              #editFormData>
+              #editFormData="ngForm">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button"
@@ -15,10 +15,13 @@
 
                     <div class="form-group">
                         <label for="editDetail">{{bodyLabel}}</label>
-                        <input type="text" class="form-control"
+                        <input type="text" 
+                               class="form-control"
                                name="editValue"
+                               id="editDetail"
                                (ngModel)="editValue"
-                               id="editDetail" />
+                               #editValue="ngModel"
+                               required />
                     </div>
                 </div>
                 <div class="modal-footer form-group">

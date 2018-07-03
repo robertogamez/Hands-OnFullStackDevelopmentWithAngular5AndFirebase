@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { UserService } from '../services/user.service';
 import { User } from '../services/user';
-import { EditDetails, EditType } from './edit-details';
+import { EditDetails, EditType } from './edit-detail';
 
 @Component({
     selector: 'app-edit-dialog',

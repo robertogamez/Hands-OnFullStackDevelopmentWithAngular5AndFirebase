@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { User } from '../../services/user';
 import { UserService } from '../../services/user.service';
 import { EditDialogComponent } from '../../edit-dialog/edit-dialog.component';
+import { EditType } from '../../edit-dialog/edit-detail';
 
 @Component({
     selector: 'app-user-profile',
@@ -15,7 +16,7 @@ export class UserProfileComponent implements OnInit {
     profileImage: any = '../../../assets/images/person_edit.png';
     user: User;
 
-    @ViewChild(EditDialogComponent) editDialog;
+    @ViewChild(EditDialogComponent) editDialog: EditDialogComponent;
 
     constructor(
         private authService: AuthenticationService,
@@ -35,6 +36,38 @@ export class UserProfileComponent implements OnInit {
 
     navigateToLogin() {
         this.router.navigateByUrl('/app-friends-login');
+    }
+
+    onNameChange() {
+        this.editDialog.setTitle('Do you want to edit name?')
+            .setBodyTitle('name')
+            .setBodyLabel('Enter your name')
+            .setEditType(EditType.NAME)
+            .show();
+    }
+
+    onEmailChange() {
+        this.editDialog.setTitle('Do you want to edit email?')
+            .setBodyTitle('email')
+            .setBodyLabel('Enter new email')
+            .setEditType(EditType.EMAIL)
+            .show();
+    }
+
+    onMobileChange() {
+        this.editDialog.setTitle('Do you want to edit mobile')
+            .setBodyTitle('mobile')
+            .setBodyLabel('Enter new mobile')
+            .setEditType(EditType.MOBILE)
+            .show();
+    }
+
+    onPasswordChange() {
+        this.editDialog.setTitle('Do you want to edit password?')
+            .setBodyTitle('password')
+            .setBodyLabel('Enter new password')
+            .setEditType(EditType.PASSWORD)
+            .show();
     }
 
 }
