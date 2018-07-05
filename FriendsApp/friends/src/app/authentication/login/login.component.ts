@@ -24,8 +24,7 @@ export class LoginComponent implements OnInit {
     ) {
         this.angularFireAuth.auth.onAuthStateChanged(user => {
             if (user) {
-                const userVM = this.getUserFireBaseToUser(user);
-                this.getUserInfo(userVM);
+                this.getUserInfo(user.uid);
             }
         });
     }
@@ -34,8 +33,7 @@ export class LoginComponent implements OnInit {
         this.authService.login(loginFormData.value.email, loginFormData.value.password)
             .then((user) => {
                 // Login user
-                const userVM = this.getUserFireBaseToUser(user);
-                this.getUserInfo(userVM);
+                this.getUserInfo(user.uid);
             }).catch((error) => {
                 this.errorMesage = error.message;
                 this.showError = true;
@@ -55,11 +53,18 @@ export class LoginComponent implements OnInit {
         return userVM;
     }
 
-    private getUserInfo(user: User) {
-        this.user = user;
-        this.userService.saveUser(this.user);
-        console.log(this.user);
-        this.navigateToUserProfile();
+    privateGetUserInfoFireBase(uid: string) {
+        this.userService.getUser(uid).subscribe(snapshot => {
+            console.log('User snapshot: ', snapshot);
+        });
+    }
+
+    private getUserInfo(uid: string) {
+        this.userService.getUser(uid).subscribe(snapshot => {
+            this.user = snapshot;
+            this.userService.saveUser(this.user);
+            this.navigateToUserProfile();
+        });
     }
 
     private navigateToUserProfile() {

@@ -7,6 +7,7 @@ import { UserRoutingModule } from './user-routing.module';
 import { AuthenticationGuard } from '../services/authentication.guard';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
+import { UserFriendsComponent } from './user-friends/user-friends.component';
 
 @NgModule({
     imports: [
@@ -16,7 +17,8 @@ import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
     ],
     declarations: [
         UserProfileComponent,
-        EditDialogComponent
+        EditDialogComponent,
+        UserFriendsComponent
     ],
     providers: [
         AuthenticationGuard
