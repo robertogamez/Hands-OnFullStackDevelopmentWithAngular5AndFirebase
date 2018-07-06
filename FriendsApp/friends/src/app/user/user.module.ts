@@ -9,6 +9,10 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 import { UserFriendsComponent } from './user-friends/user-friends.component';
 
+import { FriendService } from '../services/friend.service';
+
+import { FriendsdatePipe } from '../utils/friendsdate.pipe';
+
 @NgModule({
     imports: [
         FormsModule,
@@ -18,10 +22,12 @@ import { UserFriendsComponent } from './user-friends/user-friends.component';
     declarations: [
         UserProfileComponent,
         EditDialogComponent,
-        UserFriendsComponent
+        UserFriendsComponent,
+        FriendsdatePipe
     ],
     providers: [
-        AuthenticationGuard
+        AuthenticationGuard,
+        FriendService
     ]
 })
 export class UserModule { }

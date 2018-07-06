@@ -194,6 +194,8 @@
     <TypeScriptCompile Include="friends\src\app\user\user-profile\user-profile.component.ts" />
     <TypeScriptCompile Include="friends\src\app\user\user-routing.module.ts" />
     <TypeScriptCompile Include="friends\src\app\user\user.module.ts" />
+    <TypeScriptCompile Include="friends\src\app\utils\friendsdate.pipe.spec.ts" />
+    <TypeScriptCompile Include="friends\src\app\utils\friendsdate.pipe.ts" />
     <TypeScriptCompile Include="friends\src\app\utils\password-equal-validator.directive.ts" />
     <TypeScriptCompile Include="friends\src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="friends\src\environments\environment.ts" />

@@ -28,6 +28,59 @@ export class UserFriendsComponent implements OnInit {
     ) { }
 
     ngOnInit() {
+        this.user = this.userService.getSavedUser().getValue();
+        this.totalCount = this.user.friendcount;
+        this.friendService.getFirstPage(this.user.uid, this.pageSize)
+            .subscribe(friends => {
+                this.friends = friends;
+                const count: number = this.friends.length;
+                this.currentCount = count;
+                this.leftArrowVisible();
+                this.rightArrowVisible();
+            });
+    }
+
+    onLeft(): void {
+        this.previous();
+    }
+
+    onRight(): void {
+        this.next();
+    }
+
+    next() {
+        this.friendService.loadNextPage(
+            this.user.uid,
+            this.friends[this.friends.length - 1].uid,
+            this.pageSize
+        ).subscribe(friends => {
+            this.friends = friends;
+            const count: number = this.friends.length;
+            this.previousCount = count - 1;
+            this.currentCount += this.previousCount;
+            this.leftArrowVisible();
+            this.rightArrowVisible();
+        });
+    }
+
+    previous() {
+        this.friendService.loadPreviousPage(this.user.uid,
+            this.friends[0].uid,
+            this.pageSize).subscribe(friends => {
+                this.friends = friends;
+                const count: number = this.friends.length;
+                this.currentCount -= this.previousCount;
+                this.leftArrowVisible();
+                this.rightArrowVisible();
+            });
+    }
+
+    leftArrowVisible(): void {
+        this.isLeftVisible = this.currentCount > this.pageSize;
+    }
+
+    rightArrowVisible(): void {
+        this.isRightVisible = this.totalCount > this.currentCount;
     }
 
 }

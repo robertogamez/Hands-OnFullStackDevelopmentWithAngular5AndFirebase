@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthenticationGuard } from '../services/authentication.guard';
 
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserFriendsComponent } from './user-friends/user-friends.component';
 
 const routes: Routes = [
     {
@@ -14,6 +15,11 @@ const routes: Routes = [
     {
         path: 'app-friends-userprofile',
         component: UserProfileComponent,
+        canActivate: [AuthenticationGuard]
+    },
+    {
+        path: 'app-friends-userfriends',
+        component: UserFriendsComponent,
         canActivate: [AuthenticationGuard]
     }
 ];
