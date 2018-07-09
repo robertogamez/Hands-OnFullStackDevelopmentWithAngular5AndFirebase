@@ -14,12 +14,16 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 export class UserService {
 
     private subject: BehaviorSubject<User> = new BehaviorSubject(null);
+    private fbStorage: any;
+    private basePath = '/profile';
 
     /**
      * Constructor
      * @param {AngularFireDatabase} fireDb provides the functionality for Firebase Database
      */
-    constructor(private fireDb: AngularFireDatabase) { }
+    constructor(private fireDb: AngularFireDatabase) {
+        this.fbStorage = fireDb.app.storage();
+    }
 
     public addUser(user: User): void {
         this.fireDb.object(`${USERS_CHILD}/${user.uid}`).set(user);
@@ -57,6 +61,22 @@ export class UserService {
             name: name
         });
         this.saveUser(user);
+    }
+
+    public addProfileImage(user: User, file: File) {
+        this.fbStorage.ref(`${this.basePath}/${file.name}`).put(file)
+            .then(snapshot => {
+                const imageUrl: string = snapshot.downloadURL;
+                this.fireDb.object(`${USERS_CHILD}/${user.uid}`).update({
+                    image: imageUrl
+                });
+                user.image = imageUrl;
+
+                this.saveUser(user);
+            }).catch((error) => {
+                const errorMessage = error.message;
+                alert(errorMessage);
+            });
     }
 
 }
