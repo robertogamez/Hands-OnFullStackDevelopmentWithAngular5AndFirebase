@@ -19,6 +19,8 @@ import { AboutComponent } from './about/about.component';
 
 import { AppRouting } from './app.routing';
 
+import { ChatModule } from './chat/chat.module';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -32,9 +34,10 @@ import { AppRouting } from './app.routing';
         AngularFireModule.initializeApp(environment.firebase),
         RouterModule.forRoot([]),
         BrowserAnimationsModule,
-        AuthenticationModule,
         AppRouting,
-        UserModule
+        AuthenticationModule,
+        UserModule,
+        ChatModule
     ],
     providers: [
         AngularFireAuth,
