@@ -98,6 +98,10 @@
     <Content Include="friends\src\app\app.component.html" />
     <Content Include="friends\src\app\authentication\login\login.component.html" />
     <Content Include="friends\src\app\authentication\signup\signup.component.html" />
+    <Content Include="friends\src\app\chat\chat-message-form\chat-message-form.component.html" />
+    <Content Include="friends\src\app\chat\chat-message-list\chat-message-list.component.html" />
+    <Content Include="friends\src\app\chat\chat-message\chat-message.component.html" />
+    <Content Include="friends\src\app\chat\chat.component.html" />
     <Content Include="friends\src\app\edit-dialog\edit-dialog.component.html" />
     <Content Include="friends\src\app\page-not-found\page-not-found.component.html" />
     <Content Include="friends\src\app\shared\error-alert\error-alert.component.html" />
@@ -143,6 +147,11 @@
     <Content Include="friends\src\app\user\user-profile\user-profile.component.scss" />
     <Content Include="friends\src\app\edit-dialog\edit-dialog.component.scss" />
     <Content Include="friends\src\app\user\user-friends\user-friends.component.scss" />
+    <Content Include="friends\src\app\chat\chat.component.scss" />
+    <Content Include="friends\src\app\shared\_colors.scss" />
+    <Content Include="friends\src\app\chat\chat-message-form\chat-message-form.component.scss" />
+    <Content Include="friends\src\app\chat\chat-message-list\chat-message-list.component.scss" />
+    <Content Include="friends\src\app\chat\chat-message\chat-message.component.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -170,6 +179,16 @@
     <TypeScriptCompile Include="friends\src\app\authentication\login\login.component.ts" />
     <TypeScriptCompile Include="friends\src\app\authentication\signup\signup.component.spec.ts" />
     <TypeScriptCompile Include="friends\src\app\authentication\signup\signup.component.ts" />
+    <TypeScriptCompile Include="friends\src\app\chat\chat-message-form\chat-message-form.component.spec.ts" />
+    <TypeScriptCompile Include="friends\src\app\chat\chat-message-form\chat-message-form.component.ts" />
+    <TypeScriptCompile Include="friends\src\app\chat\chat-message-list\chat-message-list.component.spec.ts" />
+    <TypeScriptCompile Include="friends\src\app\chat\chat-message-list\chat-message-list.component.ts" />
+    <TypeScriptCompile Include="friends\src\app\chat\chat-message\chat-message.component.spec.ts" />
+    <TypeScriptCompile Include="friends\src\app\chat\chat-message\chat-message.component.ts" />
+    <TypeScriptCompile Include="friends\src\app\chat\chat-routing.module.ts" />
+    <TypeScriptCompile Include="friends\src\app\chat\chat.component.spec.ts" />
+    <TypeScriptCompile Include="friends\src\app\chat\chat.component.ts" />
+    <TypeScriptCompile Include="friends\src\app\chat\chat.module.ts" />
     <TypeScriptCompile Include="friends\src\app\edit-dialog\edit-detail.ts" />
     <TypeScriptCompile Include="friends\src\app\edit-dialog\edit-dialog.component.spec.ts" />
     <TypeScriptCompile Include="friends\src\app\edit-dialog\edit-dialog.component.ts" />
