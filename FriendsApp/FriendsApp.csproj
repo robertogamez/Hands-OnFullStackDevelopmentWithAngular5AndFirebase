@@ -152,6 +152,7 @@
     <Content Include="friends\src\app\chat\chat-message-form\chat-message-form.component.scss" />
     <Content Include="friends\src\app\chat\chat-message-list\chat-message-list.component.scss" />
     <Content Include="friends\src\app\chat\chat-message\chat-message.component.scss" />
+    <Content Include="friends\src\app\shared\_shared.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
