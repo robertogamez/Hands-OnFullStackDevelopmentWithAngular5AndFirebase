@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-chat',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatComponent implements OnInit {
 
-    constructor() { }
+    uid: string;
+    private sub: any;
+
+    constructor(
+        private route: ActivatedRoute
+    ) { }
 
     ngOnInit() {
+        this.sub = this.route.params.subscribe(params => {
+            this.uid = params['id'];
+        });
+    }
+
+    ngOnDestroy() {
+        this.sub.unsubscribe();
     }
 
 }

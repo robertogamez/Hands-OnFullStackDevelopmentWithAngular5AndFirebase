@@ -4,7 +4,8 @@ import {
     ElementRef,
     ViewChild,
     AfterViewChecked,
-    ChangeDetectorRef
+    ChangeDetectorRef,
+    Input
 } from '@angular/core';
 import { UserService } from '../../services/user.service';
 
@@ -16,6 +17,7 @@ import { UserService } from '../../services/user.service';
 })
 export class ChatMessageListComponent implements OnInit, AfterViewChecked {
 
+    @Input() friendUid: string;
     @ViewChild("scrollContainer") private scrollContainer: ElementRef;
 
     constructor(

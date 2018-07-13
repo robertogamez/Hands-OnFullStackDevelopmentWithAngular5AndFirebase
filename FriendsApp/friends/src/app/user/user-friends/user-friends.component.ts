@@ -24,7 +24,8 @@ export class UserFriendsComponent implements OnInit {
 
     constructor(
         private friendService: FriendService,
-        private userService: UserService
+        private userService: UserService,
+        private router: Router
     ) { }
 
     ngOnInit() {
@@ -81,6 +82,10 @@ export class UserFriendsComponent implements OnInit {
 
     rightArrowVisible(): void {
         this.isRightVisible = this.totalCount > this.currentCount;
+    }
+
+    onChat(id: string) {
+        this.router.navigate(['/app-friends-chat', id])
     }
 
 }

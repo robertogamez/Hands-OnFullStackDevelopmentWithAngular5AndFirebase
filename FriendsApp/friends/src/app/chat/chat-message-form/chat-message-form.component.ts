@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { MessagingService } from '../../services/messaging.service';
 import { Message } from '../../services/message';
@@ -11,6 +11,7 @@ import { UserService } from '../../services/user.service';
 })
 export class ChatMessageFormComponent implements OnInit {
 
+    @Input() friendUid: string;
     uid: string;
     newMessage: string;
 
