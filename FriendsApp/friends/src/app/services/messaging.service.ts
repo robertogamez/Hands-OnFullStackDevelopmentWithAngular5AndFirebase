@@ -35,7 +35,7 @@ export class MessagingService {
         return key;
     }
 
-    getMessage(key: string): Observable<Message[]> {
+    getMessages(key: string): Observable<Message[]> {
         return this.fireDb.list<Message>(`${MESSAGE_DETAILS_CHILD}/${key}`).valueChanges();
     }
 

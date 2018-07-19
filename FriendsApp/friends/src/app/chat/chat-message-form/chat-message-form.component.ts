@@ -25,6 +25,8 @@ export class ChatMessageFormComponent implements OnInit {
     }
 
     sendMessage() {
+        const message: Message = new Message(this.newMessage, this.uid, this.friendUid, Date.now());
+        this.messageService.createNewMessage(message);
     }
 
 }

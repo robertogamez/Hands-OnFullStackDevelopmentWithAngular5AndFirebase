@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ChatRoutingModule } from './chat-routing.module';
 
 import { UserService } from '../services/user.service';
+import { MessagingService } from '../services/messaging.service';
 
 import { ChatComponent } from './chat.component';
 import { ChatMessageComponent } from './chat-message/chat-message.component';
@@ -26,7 +27,8 @@ import { ChatMessageFormComponent } from './chat-message-form/chat-message-form.
         ChatMessageFormComponent
     ],
     providers: [
-        UserService
+        UserService,
+        MessagingService
     ]
 })
 export class ChatModule { }

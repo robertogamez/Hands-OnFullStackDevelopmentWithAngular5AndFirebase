@@ -8,6 +8,9 @@ import {
     Input
 } from '@angular/core';
 import { UserService } from '../../services/user.service';
+import { MessagingService } from '../../services/messaging.service';
+import { User } from '../../services/user';
+import { Message } from '../../services/message';
 
 
 @Component({
@@ -20,6 +23,10 @@ export class ChatMessageListComponent implements OnInit, AfterViewChecked {
     @Input() friendUid: string;
     @ViewChild("scrollContainer") private scrollContainer: ElementRef;
 
+    private user: User;
+    messages: Message[];
+    key: string;
+
     constructor(
         private messageService: MessagingService,
         private userService: UserService,
@@ -27,6 +34,22 @@ export class ChatMessageListComponent implements OnInit, AfterViewChecked {
     ) { }
 
     ngOnInit() {
+        this.user = this.userService.getSavedUser().getValue();
+        this.messageService.isMessagePresent(this.user.uid, this.friendUid)
+            .subscribe(snapshot => {
+                if (snapshot === null) {
+                    console.log('Message is empty');
+                    this.key = this.messageService.freshlyCreateChatIDEntry(
+                        this.user.uid,
+                        this.friendUid
+                    );
+                } else {
+                    this.key = snapshot.key;
+                }
+
+                this.messageService.setKey(this.key);
+                this.subscribeMessages();
+            });
     }
 
     ngAfterViewChecked() {
@@ -41,6 +64,12 @@ export class ChatMessageListComponent implements OnInit, AfterViewChecked {
         } catch (err) {
             console.log('Error');
         }
+    }
+
+    subscribeMessages() {
+        this.messageService.getMessages(this.key).subscribe(messages => {
+            this.messages = messages;
+        });
     }
 
 }
